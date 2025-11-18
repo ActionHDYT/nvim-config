@@ -3,6 +3,14 @@ return {
     "nvim-telescope/telescope.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
+      require("telescope").setup({
+        extensions = {
+          fzf = {
+            fuzzy = true,
+            case_mode = "smart_case",
+          },
+        },
+      })
       local builtin = require("telescope.builtin")
 
       vim.keymap.set("n", "<leader>f", builtin.find_files, { desc = "Window left" })
