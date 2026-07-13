@@ -48,9 +48,9 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Remove search high
 
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
-vim.api.nvim_set_keymap(
+vim.keymap.set(
   "n",
   "<leader>+",
   "<cmd>lua require('telescope.builtin').live_grep({default_text = vim.fn.expand('<cword>')})<CR>",
-  { noremap = true, silent = true }
+  { noremap = true, silent = true, desc = "Grep word under cursor" }
 )

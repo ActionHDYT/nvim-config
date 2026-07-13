@@ -1,10 +1,11 @@
 vim.api.nvim_create_autocmd("TermOpen", {
   callback = function()
     local bufnr = vim.api.nvim_get_current_buf()
-    local filetype = vim.api.nvim_buf_get_option(bufnr, "filetype")
+    local filetype = vim.bo[bufnr].filetype
 
     if filetype == "lazygit" then
-      vim.api.nvim_buf_set_keymap(bufnr, "t", "<Esc>", "<Esc>", {
+      vim.keymap.set("t", "<Esc>", "<Esc>", {
+        buffer = bufnr,
         noremap = true,
         silent = true,
         nowait = true,

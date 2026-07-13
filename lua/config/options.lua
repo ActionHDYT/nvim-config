@@ -1,5 +1,5 @@
 vim.g.mapleader = " "
-vim.api.nvim_set_keymap("n", "<Space>", "<Nop>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Space>", "<Nop>", { noremap = true, silent = true })
 
 vim.opt.number = true
 vim.opt.tabstop = 2
