@@ -1,5 +1,11 @@
+pcall(vim.cmd, "language en_US")
+
+-- Ensure curl finds the _curlrc with ssl-no-revoke (needed on corporate networks)
+vim.env.CURL_HOME = vim.fn.expand("~")
+
+
 vim.g.mapleader = " "
-vim.keymap.set("n", "<Space>", "<Nop>", { noremap = true, silent = true })
+vim.keymap.set("n", "<Space>", "<Nop>", { silent = true })
 
 vim.opt.number = true
 vim.opt.tabstop = 2
@@ -14,6 +20,7 @@ vim.opt.signcolumn = "yes"
 vim.opt.backup = false
 vim.opt.clipboard = "unnamedplus"
 vim.opt.conceallevel = 0
+vim.opt.fileformats = "dos"
 vim.opt.fileencoding = "utf-8"
 vim.opt.mouse = "a"
 vim.opt.showmode = false

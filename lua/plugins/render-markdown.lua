@@ -1,12 +1,13 @@
-return {
-	"MeanderingProgrammer/render-markdown.nvim",
-	dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.nvim" },
-	ft = { "markdown", "norg", "rmd", "org" },
-	opts = {
-		latex = {
-			enabled = true,
-
-			converter = { "latex2text" },
-		},
-	},
-}
+return {}
+-- return {
+-- 	"MeanderingProgrammer/render-markdown.nvim",
+-- 	dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-mini/mini.nvim" },
+-- 	ft = { "markdown", "norg", "rmd", "org" },
+-- 	opts = {
+-- 		latex = {
+-- 			enabled = true,
+--
+-- 			converter = { "latex2text" },
+-- 		},
+-- 	},
+-- }

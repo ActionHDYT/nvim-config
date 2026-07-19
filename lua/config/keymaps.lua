@@ -1,4 +1,4 @@
-vim.keymap.set("n", "p", [["+p<esc>:%s/\r$//g<CR>]], { noremap = true, silent = true })
+--vim.keymap.set("n", "p", [["+p<esc>:%s/\r$//g<CR>]], { noremap = true, silent = true })
 
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Window left" })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Window down" })
@@ -48,9 +48,11 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Remove search high
 
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
 
-vim.keymap.set(
-  "n",
-  "<leader>+",
-  "<cmd>lua require('telescope.builtin').live_grep({default_text = vim.fn.expand('<cword>')})<CR>",
-  { noremap = true, silent = true, desc = "Grep word under cursor" }
-)
+vim.keymap.set("n", "<leader>+", function()
+  require("telescope.builtin").live_grep({ default_text = vim.fn.expand("<cword>") })
+end, { silent = true, desc = "Live grep current word" })
+
+
+vim.keymap.set("i", "<A-,>", "<Esc>A;", { desc = "Auto-add semicolon and newline" })
+vim.keymap.set("n", "H", "^", { desc = "First non blank" })
+vim.keymap.set("n", "L", "$", { desc = "Last Char" })
